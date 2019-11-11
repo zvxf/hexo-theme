@@ -1,0 +1,103 @@
+
+  <li class="media my-4 ">
+    
+    <div class="media-body">
+
+
+<% if (index){ %> 
+<h4 class="mt-0 mb-1">    
+<a class="active nav-link" href="<%- url_for(item.path) %>"><%- item.title %></a>
+</h4>
+<div class="text-right mr-5">
+<span class="mr-2">
+作者
+</span>
+<span class="mr-5">
+<%- config.author%>
+</span>
+<span>
+<%- date(item.date, "YYYY年MM月DD日") %> 
+</span>
+</div>
+<% } else {%> 
+<h4 class="text-center ">      
+<%- item.title %>
+</h4>
+<p>
+	<span >发表时间</span>
+<span class="ml-2 badge badge-light">
+<%- date(item.date, "YYYY年MM月DD日 HH点") %> 
+</span>
+    <span class="ml-2">修改时间</span>
+<span class="ml-2 badge badge-light">
+<%- date(item.updated, "YYYY年MM月DD日 HH点") %> 
+</span>
+</p>
+<% } %>
+
+
+
+
+
+<% if (index){ %> 
+
+<% if (item.excerpt && index){ %>
+<p>
+  
+  <%- word_wrap(item.excerpt) %>
+
+ <div class="text-right"> 
+<a href="<%- url_for(item.path) %>" class="btn btn-primary ">Go More</a>
+</div>
+
+</p>
+<div>
+<span>
+  <%- partial('post/category',{item:item,index:true})%>
+  </span>
+  <span class="ml-4">
+  <%- partial('post/tag',{item:item,index:true}) %>
+  </span>
+</div>
+<hr/>
+<% } else {%>
+ <p>
+ <!-- <span> 可能忘记了 </span> -->
+<%- truncate(item.content,{length: 140}) %>
+
+ </p> 
+ <div class="text-right"> 
+  <a href="<%- url_for(item.path) %>" class="btn btn-primary ">Go More</a>
+  </div>
+ <div>
+  <span>
+    <%- partial('post/category',{item:item,index:true})%>
+    </span>
+    <span class="ml-4">
+    <%- partial('post/tag',{item:item,index:true}) %>
+    </span>
+  </div>
+<hr/>
+<% } %>
+
+<% } else {%>       
+
+<div class=" my-4  text-dark text-muted">
+
+
+
+<p>
+<div>
+<%- markdown(item.content) %>
+
+</div>
+    
+<p>
+
+
+</div>
+<% } %>
+  </div>
+  </li>
+
+  

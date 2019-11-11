@@ -1,0 +1,18 @@
+
+<nav aria-label="Page navigation example my-4">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+  <% if (page.prev){ %>
+    <a class="page-link" href="<%- config.root %><%- page.prev_link %>" class="alignleft prev"><%= __('prev') %></a>
+  <% } %>
+  </li>
+   <li class="page-item">
+  <% if (page.next){ %>
+    <a class="page-link" href="<%- config.root %><%- page.next_link %>" class="alignright next"><%= __('next') %></a>
+  <% } %>
+</li>
+</ul>
+<p>
+<hr/>
+</p>
+</nav>

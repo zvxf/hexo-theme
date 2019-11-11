@@ -1,0 +1,10 @@
+<nav class=" fixed-top navbar-dark bg-primary ">
+	<ul class="nav ml-5">
+		<% for (i in theme.header){ %>
+	
+		<li class="nav-item "><a class="nav-link text-white" 
+		href="<%- url_for(theme.header[i])%>"><%=i%></a></li>
+		
+		<% } %>
+	</ul>
+</nav>

@@ -1,0 +1,11 @@
+<div class="my-4">
+<ul class="list-unstyled ">
+<% page.posts.each(function(item){ %>
+    <%- partial('_partial/article', {item: item, index: true}) %>
+<% }); %> 
+</ul>
+<% if (page.total > 1){ %>
+    <%- partial('_partial/pagination') %>
+  <% } %>
+
+</div>

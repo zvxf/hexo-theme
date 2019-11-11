@@ -1,0 +1,6 @@
+<div>
+<h5><%= __('archive') %></h5>
+<% if (site.posts.length){ %>
+<%-list_archives({show_count: theme.show_count, type: theme.archive_type, format: "YYYY-MM"}) %>
+<% } %>
+</div>

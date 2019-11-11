@@ -1,0 +1,36 @@
+
+
+<div class="my-4">
+<% var last; %>
+<% page.posts.each(function(post){ %>
+<% var year = post.date.year(); %>
+<% if (last != year){ %>
+<% if (last != null){ %>
+
+</section>
+<% } %>
+<% last = year; %>
+<section>
+  <div>
+    <h2>
+    <a href="<%- url_for('/archives/' + year) %>" class="archive-year"><%= year %></a>
+  </h2>
+  </div>
+  <div>
+    <% } %>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="<%- url_for(post.path) %>"> <%= post.title %></a>
+      </li>
+    </ul>
+
+    <% }) %>
+    <% if (page.posts.length){ %>
+  </div>
+</section>
+<% } %>
+
+<% if (page.total > 1){ %>
+<%- partial('_partial/pagination') %>
+<% } %>
+</div>

@@ -1,0 +1,16 @@
+<div class="right">
+<h5><%= __('recent_posts') %></h5>   
+<% if (site.posts.length){ %>
+  
+        <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
+<ul class="nav flex-column">
+        <li class="nav-item">
+                <a class="nav-link" href="<%- url_for(post.path) %>">
+        <%= post.title %>
+</a>
+</li>
+</ul>
+        <% }) %>
+
+<% } %>
+</div>

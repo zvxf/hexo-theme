@@ -1,0 +1,7 @@
+<% if (site.tags.length){ %>
+ 
+    <h5 class="widget-title"><%= __('tags') %></h5>
+
+      <%- list_tags({show_count: theme.show_count}) %>
+  
+<% } %>

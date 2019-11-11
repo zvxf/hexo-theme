@@ -1,1 +1,1 @@
-# hexo-theme
+#这是一个非常简单的 hexo-theme

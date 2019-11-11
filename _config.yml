@@ -1,0 +1,19 @@
+header:
+  Home: /
+  Archives: /archives/
+  Github: https://github.com/zvxf/zvxf.github.io
+ 
+
+widgets:
+- about
+- archive
+- category
+- tag
+- recent_posts
+
+
+
+archive_type: 'monthly'
+show_count: false
+canvas_nest: true
+

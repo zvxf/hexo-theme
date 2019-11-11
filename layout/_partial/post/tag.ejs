@@ -1,0 +1,5 @@
+<%= __('tags') %>
+<% if (item.tags && item.tags.length){ %>
+  <%- list_tags(item.tags, {show_count: false,style: 'none',}) %>
+  <% } %>
+  
